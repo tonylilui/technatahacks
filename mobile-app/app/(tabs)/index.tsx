@@ -4,8 +4,7 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 
 // Define CameraType enum locally to avoid import issues
 enum CameraType {
-  back = "back",
-  front = "front",
+  back = "back"
 }
 
 const HomePage: React.FC = () => {
@@ -37,17 +36,10 @@ const HomePage: React.FC = () => {
     );
   }
 
-  const toggleCameraFacing = () => {
-    setFacing((current) =>
-      current === CameraType.back ? CameraType.front : CameraType.back
-    );
-  };
-
   return (
     <View style={styles.container}>
       {isCameraVisible ? (
         <CameraView style={styles.camera} facing={facing}>
-          <Button title="Flip Camera" onPress={toggleCameraFacing} />
         </CameraView>
       ) : (
         <Button title="Open Camera" onPress={handleRequestPermission} />
