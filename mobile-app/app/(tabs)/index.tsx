@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 
-// Define CameraType enum locally to avoid import issues
 enum CameraType {
   back = 'back',
   front = 'front',
